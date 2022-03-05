@@ -1,5 +1,7 @@
 .home {
-  height: 100vh;
+  height: calc(100vh - 5rem);
+  position: relative;
+  top: 5rem;
 }
 
 .home .hero {

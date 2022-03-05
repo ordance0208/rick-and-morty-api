@@ -1,13 +1,11 @@
 import './CardContainer.css';
 
-const CardContainer = (props) => {
-  console.log(props)
-
+const CardContainer = ({children}) => {
   return (
     <div className='card-container'>
-    
+      {children}
     </div>
-  );
+  )
 };
 
 export default CardContainer;

@@ -1,0 +1,32 @@
+.character-details {
+  height: calc(100vh - 5rem);
+  position: relative;
+  top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-details .character-details-card {
+  color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  text-align: left;
+}
+
+.character-details .character-details-card .character-image {
+  width: 350px;
+  height: auto;
+  border: 0.5rem solid rgb(149, 223, 40)
+}
+
+.character-details .character-details-card h3 {
+  margin-top: .75rem;
+  font-size: 2rem;
+}
+
+.character-details .character-details-card p {
+  margin-top: 0.1rem;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,72 @@
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.character-card {
+  background: #fafafa;
+  padding: 1rem;
+  max-width: 320px;
+  height: 385px;
+  border-bottom: 1rem solid rgb(149, 223, 40);
+  transition: all 400ms ease;
+}
+
+.character-card:hover {
+  border-bottom: 0rem solid rgb(149, 223, 40);
+}
+
+.character-card:hover .image-holder .character-image {
+  transform: scale(1.05);
+}
+
+.character-card .image-holder {
+  position: relative;
+  overflow: hidden;
+}
+
+.character-card .image-holder .character-image {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.character-card .image-holder .character-status {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #fafafa;
+  text-align: center;
+  padding: 0.1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.character-card .image-holder .character-status::first-letter {
+  text-transform: capitalize;
+}
+
+.character-card .image-holder .character-status[data-status='alive'] {
+  background: green;
+}
+
+.character-card .image-holder .character-status[data-status='dead'] {
+  background: red;
+}
+
+.character-card .image-holder .character-status[data-status='unknown'] {
+  background: lightslategray;
+}
+
+.character-card .character-info {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: start;
+  text-align: left;
+}
+
+.card .character-info .character-name {
+  margin-bottom: 0.2rem;
+}
