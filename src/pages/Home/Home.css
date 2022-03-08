@@ -1,31 +1,4 @@
 .home {
   height: calc(100vh - 5rem);
-  position: relative;
-  top: 5rem;
 }
 
-.home .hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-}
-
-.home .hero > img {
-  width: 400px;
-  height: auto;
-}
-
-.home h1 {
-  color: #fafafa;
-  font-size: 3rem;
-  margin: 1rem 0;
-  font-weight: 200;
-}
-
-.home p {
-  color: #fafafa;
-  font-size: 1.75rem;
-  font-weight: 200;
-}

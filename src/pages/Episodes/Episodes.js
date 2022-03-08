@@ -1,36 +1,38 @@
-import { useContext, useEffect, useState } from 'react';
-import DataContext from '../../contexts/DataContext';
+import { useEffect, useState } from 'react';
 import ListPage from '../ListPage/ListPage';
 import EpisodeCard from '../../components/EpisodeCard/EpisodeCard';
 import './Episodes.css'
+import Container from '../../auxillary/Container/Container';
 
 const Episodes = () => {
   const [episodesData, setEpisodesData] = useState([]);
-  const { episodes: apiUrl } = useContext(DataContext);
+  const [dataInfo, setDataInfo] = useState({});
+  const [urlToFetch, setUrlToFetch] = useState('https://rickandmortyapi.com/api/episode/?page=1');
 
   const fetchEpisodes = async() => {   
-    if(!apiUrl || episodesData.length !== 0) return; 
     try {
-      const response = await fetch(apiUrl);
+      const response = await fetch(urlToFetch);
       const data = await response.json();
       setEpisodesData(data.results);
+      setDataInfo(data.info);
       console.log(data);
     } catch(err) {
-      console.log('Can\'t fetch data!', err);
+      console.log(`Can't fetch data: `, err);
     }
   };
 
-  useEffect(fetchEpisodes, [apiUrl]);
-  useEffect(() => {
-    window.scrollTo(0,0);
-  }, []);
+  useEffect(fetchEpisodes, [urlToFetch]);
   
   return (
-    <ListPage heading={'Episodes'}>
-      {episodesData.map((episode) => {
-        return <EpisodeCard episode={episode} key={episode.id}/>        
-      })}
-    </ListPage>
+    <div className='episodes'>
+      <Container>
+        <ListPage heading={'Episodes'} dataInfo={dataInfo} setNextPage={setUrlToFetch}>
+        {episodesData.map((episode) => {
+          return <EpisodeCard episode={episode} key={episode.id}/>        
+        })}
+        </ListPage>
+      </Container>
+    </div>
   )
 };
 

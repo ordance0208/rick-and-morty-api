@@ -1,9 +1,3 @@
-.list-page {
-  height: calc(100vh - 5rem);
-  position: relative;
-  top: 5rem;
-}
-
 .list-page .list-page-heading {
   color: #fafafa;
   font-size: 2.3rem;
@@ -23,4 +17,47 @@
   width: 200px;
   height: 3px;
   background: rgb(149, 223, 40); 
+}
+
+.list-page .paginator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 3rem 0;
+  height: 35px;
+}
+
+.list-page .paginator .paginator-page {
+  background: rgb(149, 223, 40);
+  height: 100%;
+  display: block;
+  margin: 0 1rem;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.list-page .paginator .paginator-prev-button,
+.list-page .paginator .paginator-next-button {
+  display: flex;
+  background: rgb(149, 223, 40);
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.list-page .paginator .paginator-link {
+  display: block;
+  font-size: 1.3rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  opacity: 1;
 }

@@ -1,3 +1,7 @@
+:root {
+  --primary-color: rgb(149, 223, 40); 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,4 +22,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.text-primary {
+  color: var(--primary-color);
 }

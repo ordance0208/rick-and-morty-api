@@ -1,0 +1,14 @@
+.about {
+  height: calc(100vh - 5rem);
+  color: #fafafa;
+  padding-top: 3rem;
+}
+
+.about h3 {
+  font-size: 2rem;
+}
+
+.about p {
+  font-size: 1.35rem;
+  font-weight: 400;
+}

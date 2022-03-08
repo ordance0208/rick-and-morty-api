@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
+import CharacterInfoContainer from '../../components/CharacterInfoContainer/CharacterInfoContainer';
 import './CharacterDetails.css';
 
 const CharacterDetails = ({match}) => {
   const [character, setCharacter] = useState({});
-  console.log(match.params.id);
-  
-  const characterApi = 'https://rickandmortyapi.com/api/character/';
+  const characterApiEndpoint = 'https://rickandmortyapi.com/api/character/';
 
   const fetchCharacterDetails = async() => {
     try {
-      const response = await fetch(`${characterApi}${match.params.id}`);
+      const response = await fetch(`${characterApiEndpoint}${match.params.id}`);
       const data = await response.json();
       setCharacter(data);
-      console.log(data);
     } catch(err) {  
       console.log(err);
     }
@@ -22,14 +20,7 @@ const CharacterDetails = ({match}) => {
 
   return (
     <div className='character-details'>
-      <div className='character-details-card'>
-        <img className='character-image' src={character.image} alt='character img'/>
-        <h3>Name: {character.name}</h3>
-        <p>Status: {character.status}</p>
-        <p>Species: {character.species}</p>
-        <p>Type: {character.type || '--'}</p>
-        <p>Gender: {character.gender  }</p>
-      </div>
+      <CharacterInfoContainer character={character}/>
     </div>
   )
 };

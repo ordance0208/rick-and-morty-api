@@ -1,36 +1,37 @@
-import { useContext, useEffect, useState } from 'react';
-import DataContext from '../../contexts/DataContext';
+import { useEffect, useState } from 'react';
 import ListPage from '../ListPage/ListPage';
 import LocationCard from '../../components/LocationCard/LocationCard';
 import './Locations.css';
+import Container from '../../auxillary/Container/Container';
 
 const Locations = () => {
   const [locationsData, setLocationsData] = useState([]);
-  const { locations: apiUrl } = useContext(DataContext);
+  const [dataInfo, setDataInfo] = useState({});
+  const [urlToFetch, setUrlToFetch] = useState('https://rickandmortyapi.com/api/location/?page=1');
 
-  const fetchLocations = async() => {   
-    if(!apiUrl || locationsData.length !== 0) return; 
+  const fetchLocations = async() => {    
     try {
-      const response = await fetch(apiUrl);
+      const response = await fetch(urlToFetch);
       const data = await response.json();
       setLocationsData(data.results);
-      console.log(data);
+      setDataInfo(data.info);
     } catch(err) {
-      console.log('Can\'t fetch data!', err);
+      console.log(`Can't fetch data: `, err);
     }
   };
 
-  useEffect(fetchLocations, [apiUrl]);
-  useEffect(() => {
-    window.scrollTo(0,0);
-  }, []);
-
+  useEffect(fetchLocations, [urlToFetch]);
+  
   return (
-    <ListPage heading={'Locations'}>
-      {locationsData.map((location) => {
-        return <LocationCard location={location} key={location.id}/>
-      })}
-    </ListPage>
+    <div className='locations'>
+      <Container>
+        <ListPage heading={'Locations'} dataInfo={dataInfo} setNextPage={setUrlToFetch}>
+        {locationsData.map((location) => {
+          return <LocationCard location={location} key={location.id}/>
+        })}
+        </ListPage>
+      </Container>
+    </div>
   )
 };
 

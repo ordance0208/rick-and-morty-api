@@ -6,16 +6,16 @@ const Header = () => {
   return (
     <header className='header'>
       <Container>
-        <h1>The Rick and Morty Library</h1>
+        <h1><span className='text-primary'>The Rick and Morty Library</span></h1>
         <nav className='main-nav'>
           <ul>
             <li><NavLink activeClassName='active-nav-link' exact to='/'>Home</NavLink></li>
-            <li><NavLink activeClassName='active-nav-link' to='/characters'>Characters</NavLink></li>
+            <li><NavLink activeClassName='active-nav-link' to='/characters/page/1'>Characters</NavLink></li>
             <li><NavLink activeClassName='active-nav-link' to='/locations'>Locations</NavLink></li>
             <li><NavLink activeClassName='active-nav-link' to='/episodes'>Episodes</NavLink></li>
+            <li><NavLink activeClassName='active-nav-link' to='/about'>About</NavLink></li>
           </ul>
         </nav>          
-        
       </Container>
     </header>
   )

@@ -9,42 +9,26 @@ import Locations from '../../pages/Locations/Locations';
 import Episodes from '../../pages/Episodes/Episodes';
 import CharacterDetails from '../../pages/CharacterDetails/CharacterDetails';
 import './App.css';
-
-const apiUrl = 'https://rickandmortyapi.com/api';
-const apiUrls = {
-  characters: 'https://rickandmortyapi.com/api/character',
-  locations: 'https://rickandmortyapi.com/api/location',
-  episodes: 'https://rickandmortyapi.com/api/episode'
-}
+import LocationDetails from '../../pages/LocationDetails/LocationDetails';
+import NotFound from '../../pages/NotFound/NotFound';
+import About from '../../pages/About/About';
 
 function App() {
-  const [apiData, setApiData] = useState({});
-
-  const fetchApiData = async() => {
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      setApiData(data);
-    } catch(err) {
-      console.log('Can\'t fetch data!');
-    }
-  }
-
-  useEffect(fetchApiData, []);
-
   return (
     <div className="App">
-      <DataContext.Provider value={apiData}>
-        <Container>
-          <Header />
-          <Switch>
+      <DataContext.Provider value={''}>
+        <Header />
+        <Switch>
             <Route path='/' exact component={Home}/>
-            <Route path='/characters' component={Characters}/>
+            <Route path='/characters/page/1' component={Characters}/>
             <Route path='/character/:id' component={CharacterDetails}/>
             <Route path='/locations' component={Locations}/>
+            <Route path='/location/:id' component={LocationDetails}/>
             <Route path='/episodes' component={Episodes}/>
+            <Route path='/episode/:id' component={Episodes}/>
+            <Route path='/about' component={About}/>
+            <Route path='*' component={NotFound}/>
           </Switch>
-        </Container>
       </DataContext.Provider>
     </div>
   );
