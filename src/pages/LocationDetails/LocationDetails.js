@@ -23,9 +23,7 @@ const LocationDetails = ({ match }) => {
   const fetchResidents = async() => {
     let charactersApiEndpoint = 'https://rickandmortyapi.com/api/character/';
 
-    if(Object.keys(location).length === 0) {      
-      return;
-    } 
+    if(Object.keys(location).length === 0) return;
 
     if(location.residents.length === 0) {      
       setNoResidents(true);
