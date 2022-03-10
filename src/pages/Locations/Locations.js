@@ -1,26 +1,16 @@
 import { useEffect, useState } from 'react';
 import ListPage from '../ListPage/ListPage';
 import LocationCard from '../../components/LocationCard/LocationCard';
-import './Locations.css';
 import Container from '../../auxillary/Container/Container';
+import { fetchPage } from '../../requests/requests';
+import './Locations.css';
 
 const Locations = () => {
   const [locationsData, setLocationsData] = useState([]);
   const [dataInfo, setDataInfo] = useState({});
   const [urlToFetch, setUrlToFetch] = useState('https://rickandmortyapi.com/api/location/?page=1');
 
-  const fetchLocations = async() => {    
-    try {
-      const response = await fetch(urlToFetch);
-      const data = await response.json();
-      setLocationsData(data.results);
-      setDataInfo(data.info);
-    } catch(err) {
-      console.log(`Can't fetch data: `, err);
-    }
-  };
-
-  useEffect(fetchLocations, [urlToFetch]);
+  useEffect(() => fetchPage(urlToFetch, setLocationsData, setDataInfo), [urlToFetch]);
   
   return (
     <div className='locations'>

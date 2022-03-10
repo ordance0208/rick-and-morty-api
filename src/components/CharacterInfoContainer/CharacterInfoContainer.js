@@ -8,7 +8,8 @@ const CharacterInfoContainer = ({character}) => {
       <p className='other-info'>Status: {character.status}</p>
       <p className='other-info'>Species: {character.species}</p>
       <p className='other-info'>Type: {character.type || '--'}</p>
-      <p className='other-info'>Gender: {character.gender  }</p>
+      <p className='other-info'>Gender: {character.gender}</p>
+      <p className='other-info'>Origin: {character.origin ? character.origin.name : ''}</p>      
     </div>
   )
 };

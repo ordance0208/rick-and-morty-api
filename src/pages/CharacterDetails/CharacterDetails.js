@@ -1,26 +1,20 @@
 import { useEffect, useState } from 'react';
 import CharacterInfoContainer from '../../components/CharacterInfoContainer/CharacterInfoContainer';
+import Container from '../../auxillary/Container/Container'
+import { fetchSingleSubject } from '../../requests/requests';
 import './CharacterDetails.css';
 
 const CharacterDetails = ({match}) => {
   const [character, setCharacter] = useState({});
   const characterApiEndpoint = 'https://rickandmortyapi.com/api/character/';
 
-  const fetchCharacterDetails = async() => {
-    try {
-      const response = await fetch(`${characterApiEndpoint}${match.params.id}`);
-      const data = await response.json();
-      setCharacter(data);
-    } catch(err) {  
-      console.log(err);
-    }
-  };
-
-  useEffect(fetchCharacterDetails, []);
-
+  useEffect(() => fetchSingleSubject(`${characterApiEndpoint}${match.params.id}`, setCharacter), []);
+  
   return (
     <div className='character-details'>
-      <CharacterInfoContainer character={character}/>
+      <Container>
+       <CharacterInfoContainer character={character}/>
+      </Container>
     </div>
   )
 };

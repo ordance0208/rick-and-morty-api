@@ -1,0 +1,29 @@
+.location-info-container {
+  width: 100%;
+  color: #fafafa;
+  padding: 1rem;  
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.location-info-container .info-holder {
+  margin: auto;
+}
+
+.location-info-container .location-name {
+  margin-top: .75rem;
+  font-size: 2.05rem;
+  text-align: left;
+}
+
+.location-info-container .other-info {
+  margin-top: 0.2rem;
+  font-size: 1.35rem;
+  text-align: left;
+}
+
+.location-info-container h3.other-info {
+  margin-bottom: 1.75rem;
+  font-size: 1.8rem;
+}

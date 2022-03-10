@@ -1,4 +1,4 @@
-.character-details {
+.character-details .container {
   height: calc(100vh - 5rem);
   display: flex;
   justify-content: center;
