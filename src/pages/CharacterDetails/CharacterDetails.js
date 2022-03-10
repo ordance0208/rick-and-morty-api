@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CharacterInfoContainer from '../../components/CharacterInfoContainer/CharacterInfoContainer';
-import Container from '../../auxillary/Container/Container'
+import Container from '../../auxillary/Container/Container';
 import { fetchSingleSubject } from '../../requests/requests';
+import DataContext from '../../contexts/DataContext';
 import './CharacterDetails.css';
 
 const CharacterDetails = ({match}) => {
   const [character, setCharacter] = useState({});
-  const characterApiEndpoint = 'https://rickandmortyapi.com/api/character/';
+  const { characters: characterEndpoint } = useContext(DataContext);
 
-  useEffect(() => fetchSingleSubject(`${characterApiEndpoint}${match.params.id}`, setCharacter), []);
+  useEffect(() => fetchSingleSubject(`${characterEndpoint}${match.params.id}`, setCharacter), []);
   
   return (
     <div className='character-details'>
@@ -16,7 +17,7 @@ const CharacterDetails = ({match}) => {
        <CharacterInfoContainer character={character}/>
       </Container>
     </div>
-  )
+  );
 };
 
 export default CharacterDetails;

@@ -22,7 +22,7 @@ const Locations = () => {
         </ListPage>
       </Container>
     </div>
-  )
+  );
 };
 
 export default Locations;

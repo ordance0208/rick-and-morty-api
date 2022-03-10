@@ -13,9 +13,15 @@ import About from '../../pages/About/About';
 import EpisodeDetails from '../../pages/EpisodeDetails/EpisodeDetails';
 
 function App() {
+  const apiEndpoints = {
+    characters: 'https://rickandmortyapi.com/api/character/',
+    locations: 'https://rickandmortyapi.com/api/location/',
+    episodes: 'https://rickandmortyapi.com/api/episode/'
+  };
+
   return (
     <div className="App">
-      <DataContext.Provider value={''}>
+      <DataContext.Provider value={apiEndpoints}>
         <Header />
         <Switch>
             <Route path='/' exact component={Home}/>

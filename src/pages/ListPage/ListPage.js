@@ -6,7 +6,7 @@ import './ListPage.css'
 const ListPage = ({ heading, children, dataInfo, setNextPage }) => {
 
   const handleNextPage = (e) => {
-    const url = dataInfo.next ? dataInfo.next : dataInfo.prev; 
+    const url = dataInfo.next || dataInfo.prev; 
     const indexToSliceTo = url.indexOf('=');
     setNextPage(url.slice(0, indexToSliceTo + 1) + (e.selected+1));
   }
@@ -34,7 +34,7 @@ const ListPage = ({ heading, children, dataInfo, setNextPage }) => {
         onPageChange={handleNextPage}
         />}
     </div>
-  )
+  );
 };
 
 export default ListPage;
