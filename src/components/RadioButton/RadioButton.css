@@ -1,0 +1,23 @@
+.radio-button {
+  padding: 0.75rem;
+  outline: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background: none;
+  color: #fafafa;
+  cursor: pointer;
+  transition: background 200ms ease;
+  margin-right: 1rem;
+}
+
+.radio-button:last-child {
+  margin: 0;
+}
+
+.radio-button:hover {
+  background: var(--primary-color);
+}
+
+.radio-button.active {
+  background: var(--primary-color);
+}

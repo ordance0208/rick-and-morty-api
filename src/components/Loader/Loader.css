@@ -5,7 +5,7 @@
   margin: auto;
   border-radius: 50%;
   border: 1.5rem solid #333;
-  border-top: 1.5rem solid rgb(149, 223, 40);
+  border-top: 1.5rem solid var(--primary-color);
   animation: infinite rotate 2s linear;
 }
 

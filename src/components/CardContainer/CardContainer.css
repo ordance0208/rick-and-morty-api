@@ -3,4 +3,5 @@
   grid-template-columns: repeat(auto-fit, 320px);
   justify-content: center;
   gap: 1.5rem;
+  color: #fafafa;
 }

@@ -8,12 +8,12 @@ a {
   padding: 1rem;
   max-width: 320px;
   height: 385px;
-  border-bottom: 1rem solid rgb(149, 223, 40);
+  /* border-bottom: 1rem solid var(--primary-color); */
   transition: all 400ms ease;
 }
 
 .character-card:hover {
-  border-bottom: 0rem solid rgb(149, 223, 40);
+  border-bottom: 0rem solid var(--primary-color);
 }
 
 .character-card:hover .image-holder .character-image {

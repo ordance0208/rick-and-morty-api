@@ -13,12 +13,12 @@ a {
   align-items: center;
   text-align: left;
   color: #333;
-  border-left: 1rem solid rgb(149, 223, 40);
+  border-left: 1rem solid var(--primary-color);
   transition: border 400ms ease;
 }
 
 .location-card:hover {
-  border-left: 0rem solid rgb(149, 223, 40);
+  border-left: 0rem solid var(--primary-color);
 }
 
 .location-card .location-info {

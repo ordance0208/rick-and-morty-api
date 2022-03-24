@@ -1,10 +1,10 @@
 import Loader from '../Loader/Loader';
 import './CardContainer.css';
 
-const CardContainer = ({children}) => {
+const  CardContainer = ({children}) => {
   return (
     <div className='card-container'>
-      {children ? children : <Loader />}
+      {children}
     </div>
   )
 };

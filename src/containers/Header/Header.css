@@ -11,9 +11,8 @@
   justify-content: space-between;
 }
 
-.header .header-image {
-  height: 80px;
-  width: auto;
+.header > .container > h1 {
+  font-size: 1.5rem;
 }
 
 .header .main-nav ul {
@@ -32,11 +31,9 @@
 .header .main-nav ul li a {
   text-decoration: none;
   color: #fafafa;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .header .main-nav ul li a.active-nav-link {
-  /* border-bottom: 3px solid greenyellow;
-  padding-bottom: 0.2rem; */
-  color: rgb(149, 223, 40);
+  color: var(--primary-color);
 }

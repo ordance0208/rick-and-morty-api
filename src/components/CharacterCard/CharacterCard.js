@@ -7,7 +7,7 @@ const CharacterCard = ({character}) => {
       <div className='character-card'>
       <div className='image-holder'>
         <img className='character-image' src={character.image} alt='character-image'/>
-        <p className='character-status' data-status={character.status.toLowerCase()} >{character.status}</p>
+        <p className='character-status' data-status={character.status && character.status.toLowerCase()} >{character.status}</p>
       </div>
       <div className='character-info'>
         <h3 className='character-name'>{character.name}</h3>

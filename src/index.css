@@ -1,5 +1,6 @@
 :root {
   --primary-color: rgb(149, 223, 40); 
+  --header-height: 5rem;
 }
 
 * {

@@ -10,7 +10,7 @@
 .character-info-container .character-image {
   width: 100%;
   height: auto;
-  border: 0.5rem solid rgb(149, 223, 40);
+  border: 0.5rem solid var(--primary-color);
 }
 
 .character-info-container .character-name {

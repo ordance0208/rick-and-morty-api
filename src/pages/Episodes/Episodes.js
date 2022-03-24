@@ -9,13 +9,14 @@ const Episodes = () => {
   const [episodesData, setEpisodesData] = useState([]);
   const [dataInfo, setDataInfo] = useState({});
   const [urlToFetch, setUrlToFetch] = useState('https://rickandmortyapi.com/api/episode/?page=1');
+  const [error, setError] = useState(false);
 
-  useEffect(() => fetchPage(urlToFetch, setEpisodesData, setDataInfo), [urlToFetch]);
+  useEffect(() => fetchPage(urlToFetch, setEpisodesData, setDataInfo, setError), [urlToFetch]);
   
   return (
     <div className='episodes'>
       <Container>
-        <ListPage heading={'Episodes'} dataInfo={dataInfo} setNextPage={setUrlToFetch}>
+        <ListPage heading={'Episodes'} dataInfo={dataInfo} urlToFetch={urlToFetch} setUrlToFetch={setUrlToFetch} error={error}>
           {episodesData.map((episode) => {
             return <EpisodeCard episode={episode} key={episode.id}/>        
           })}

@@ -1,0 +1,17 @@
+.search-box {
+  margin: 2rem 0 2rem 0;
+}
+
+.search-box .search-field {
+  width: 350px;
+  font-size: 1.4rem;
+  height: 45px;
+  outline: none;
+  border-radius: 15px;
+  padding: 0 0.75rem;
+  border: 2px solid var(--primary-color);
+  background: #333;
+  color: #fafafa;
+
+}
+

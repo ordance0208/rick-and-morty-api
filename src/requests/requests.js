@@ -1,7 +1,15 @@
-export const fetchPage = async (urlToFetch, setResults, setInfo) => {
+export const fetchPage = async (urlToFetch, setResults, setInfo, setError) => {
   try {
     const response = await fetch(urlToFetch);
     const data = await response.json();
+
+    if(data.error) {
+      setError(true);
+      setInfo({})
+      throw new Error('Not Found');
+    }
+
+    setError(false);
     setResults(data.results);
     setInfo(data.info);
   } catch (err) {

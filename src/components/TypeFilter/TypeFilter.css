@@ -1,0 +1,18 @@
+.type-filter {
+  margin-bottom: 1.25rem;
+}
+
+.type-filter:last-child {
+  margin: 0;
+}
+
+.type-filter .filter-title {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #fafafa;
+  margin-bottom: 0.5rem;
+}
+
+.type-filter .radio-group {
+  display: flex;
+}
