@@ -49,7 +49,7 @@ const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endp
       {dataInfo && <ReactPaginate 
         renderOnZeroPageCount={null}
         // Prevents printing a warning message to the console
-        pageCount={typeof dataInfo.pages === 'integer' ? Math.ceil(dataInfo.pages) : 1}
+        pageCount={dataInfo.pages}
         pageRangeDisplayed={3}
         marginPagesDisplayed={2}
         className='paginator'

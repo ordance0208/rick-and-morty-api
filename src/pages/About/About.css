@@ -5,7 +5,3 @@
 .about div {
   margin-bottom: 3rem;
 }
-
-.about div:last-child {
-  margin-bottom: 0;
-}

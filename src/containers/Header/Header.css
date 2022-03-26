@@ -1,39 +1,88 @@
-.header {
+#header {
   padding: 0.5rem;
   background-color: rgb(36, 40, 47);
   width: 100%;
   height: 5rem;
 }
 
-.header > .container {
+#header > .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.header > .container > h1 {
+#header > .container > h1 {
   font-size: 1.5rem;
 }
 
-.header .main-nav ul {
+#header .main-nav ul {
   display: flex;
   list-style: none;
 }
 
-.header .main-nav ul li {
+#header .main-nav ul li {
   margin-right: 2.2rem;
 }
 
-.header .main-nav ul li:last-child {
+#header .main-nav ul li:last-child {
   margin-right: 0;
 }
 
-.header .main-nav ul li a {
+#header .main-nav ul li a {
   text-decoration: none;
   color: #fafafa;
   font-size: 1.2rem;
 }
 
-.header .main-nav ul li a.active-nav-link {
+#header .main-nav ul li a.active-nav-link {
   color: var(--primary-color);
+}
+
+#header p {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  #header .main-nav ul {
+    display: block;
+    position:fixed;
+    width: 300px;
+    background: rgb(27, 27, 27);
+    border-left: 3px solid #333;
+    top: 0;
+    bottom: 0;
+    right: -100%;
+    left: unset;
+    z-index: 999;
+    transition: right 400ms ease;
+  }
+
+  #header .main-nav ul.active {
+    right: 0;
+  }
+
+  #header .main-nav ul li {
+    margin-right: 0;
+    text-align: left;
+    font-size: 2.2rem;
+    padding: 0.5rem 0 0.5rem 1.2rem;
+    border-bottom: 1px solid #333;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 480px){
+  #header .main-nav ul {
+    width: 200px;
+  }
+
+  #header .main-nav ul li {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  #header > .container h1 {
+    font-size: 1rem;
+  }
 }

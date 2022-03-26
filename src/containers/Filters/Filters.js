@@ -3,7 +3,7 @@ import TypeFilter from '../../components/TypeFilter/TypeFilter';
 import './Filters.css';
 
 const Filters = ({setStatusFilter, setGenderFilter, setSpeciesFilter}) => {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   return (
     <div className='filters'>

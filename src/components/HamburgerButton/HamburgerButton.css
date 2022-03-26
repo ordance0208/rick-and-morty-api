@@ -1,0 +1,38 @@
+.hamburger-button {
+  cursor: pointer;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.hamburger-button > div {
+  height: 2px;
+  width: 100%;
+  background: var(--primary-color);
+  align-self: center;
+  position: relative;
+}
+
+.hamburger-button > div::before,
+.hamburger-button > div::after {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  top: -9px;
+}
+
+.hamburger-button > div::after {
+  top: 9px;
+}
+
+
+@media screen and (max-width:1024px) {
+  .hamburger-button {
+    display: flex;
+  }
+}

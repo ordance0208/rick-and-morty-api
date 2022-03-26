@@ -1,4 +1,13 @@
 .home {
   height: calc(100vh - var(--header-height));
+  overflow-x: hidden;
+}
+
+@media screen and (max-height:600px) {
+  .home {
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem  ;
+  }
 }
 

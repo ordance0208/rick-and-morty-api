@@ -1,4 +1,3 @@
-import Loader from '../Loader/Loader';
 import './CardContainer.css';
 
 const  CardContainer = ({children}) => {

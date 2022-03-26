@@ -1,4 +1,8 @@
 .hero {
+  height: 100%;
+}
+
+.hero .container{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,14 +18,51 @@
 
 .hero .hero-heading {
   color: #fafafa;
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin: 1rem 0;
   font-weight: 300;
 }
 
 .hero .hero-text {
   color: #fafafa;
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 200;
 }
 
+@media screen and (max-width: 768px) {
+  .hero .hero-image {
+    width: 100%;
+  }
+
+  .hero .hero-heading {
+    font-size: 2rem;
+  }
+
+  .hero .hero-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero .hero-image {
+    width: 100%;
+  }
+
+  .hero .hero-heading  {
+    font-size: 1.8rem;
+  }
+
+  .hero .hero-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .hero .hero-heading  {
+    font-size: 1.7rem;
+  }
+
+  .hero .hero-text {
+    font-size: 1.2rem;
+  }
+}
