@@ -46,7 +46,7 @@
   #header .main-nav ul {
     display: block;
     position:fixed;
-    width: 300px;
+    width: 250px;
     background: rgb(27, 27, 27);
     border-left: 3px solid #333;
     top: 0;

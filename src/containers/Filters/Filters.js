@@ -7,7 +7,7 @@ const Filters = ({setStatusFilter, setGenderFilter, setSpeciesFilter}) => {
 
   return (
     <div className='filters'>
-      <button onClick={() => setHidden(!hidden)}>{hidden ? 'Show Filters' : 'Hide Filters'}</button>
+      <button className='toggle-show-filters' onClick={() => setHidden(!hidden)}>{hidden ? 'Show Filters' : 'Hide Filters'}</button>
       {!hidden && <div className='filter-group'>
       <TypeFilter filterFields={['Alive', 'Dead', 'Unknown']} setFilter={setStatusFilter} filterTitle='Status'/>
       <TypeFilter filterFields={['Male', 'Female', 'Genderless', 'Unknown']} setFilter={setGenderFilter} filterTitle='Gender'/>

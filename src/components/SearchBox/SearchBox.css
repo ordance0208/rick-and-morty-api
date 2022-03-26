@@ -3,15 +3,14 @@
 }
 
 .search-box .search-field {
-  width: 350px;
+  width: 100%;
   font-size: 1.4rem;
   height: 45px;
   outline: none;
-  border-radius: 15px;
+  border-radius: 8px;
   padding: 0 0.75rem;
   border: 2px solid var(--primary-color);
   background: #333;
   color: #fafafa;
-
 }
 

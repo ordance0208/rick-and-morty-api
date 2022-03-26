@@ -16,6 +16,16 @@ const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endp
 
   const [selectedPageIndex, setSelectedPageIndex] = useState(1);
 
+  const [pageRange, setPageRange] = useState(5);
+  const [marginPages, setMarginPages] = useState(2);
+
+  
+  const handleResize = () => {
+    setPageRange(window.innerWidth < 650 ? 1 : 5);
+    setMarginPages(window.innerWidth < 650 ? 1 : 2);
+  }
+
+  // Constructs a URL according to the filters and page number 
   const urlConstructor = () => {
     const url = endpoint;
     
@@ -25,15 +35,30 @@ const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endp
     return urlToFetch;
   }
 
+  // Set the paginator page range and margin pages based on screen size
+  // And on resize
+  useEffect(() => {
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
+  // Change the URL to fetch when any of the filters change
   useEffect(() => {
     setSelectedPageIndex(1);
     setUrlToFetch(urlConstructor());    
   }, [queryString, statusFilter, speciesFilter, genderFilter]);
 
+  // Change the URL to fetch when the page is changed from the paginator
   useEffect(() => {
     setUrlToFetch(urlConstructor());
   }, [selectedPageIndex]);
 
+  // Scroll to top when the newest page renders
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [children]);
@@ -50,8 +75,8 @@ const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endp
         renderOnZeroPageCount={null}
         // Prevents printing a warning message to the console
         pageCount={dataInfo.pages}
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={2}
+        pageRangeDisplayed={pageRange}
+        marginPagesDisplayed={marginPages}
         className='paginator'
         pageClassName='paginator-page'
         pageLinkClassName='paginator-link'

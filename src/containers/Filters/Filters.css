@@ -1,3 +1,18 @@
 .filters {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.filters .toggle-show-filters {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  outline: none;
+}
+
+.filters .toggle-show-filters:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
