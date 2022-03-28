@@ -10,7 +10,7 @@ import LocationDetails from '../../pages/LocationDetails/LocationDetails';
 import NotFound from '../../pages/NotFound/NotFound';
 import About from '../../pages/About/About';
 import EpisodeDetails from '../../pages/EpisodeDetails/EpisodeDetails';
-import UniversalPage from '../../pages/UniversalPage/UniversalPage';
+import TitleComponent from '../../helper/TitleComponent';
 import './App.css';
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
           <Route path='/about' component={About} />
           <Route path='*' component={NotFound} />
         </Switch>
+        <Route path='/' component={TitleComponent} />
       </DataContext.Provider>
     </div>
   );

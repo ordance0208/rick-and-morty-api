@@ -28,7 +28,7 @@ const Header = () => {
             <li><NavLink activeClassName='active-nav-link' to='/about' onClick={closeHamburgerButton}>About</NavLink></li>
           </ul>
         </nav>
-        <HamburgerButton onClick={openHamburgerButton}/>    
+        <HamburgerButton onClick={openHamburgerButton} buttonActive={hamburgerMenuOpened}/>    
       </Container>
     </header>
   )

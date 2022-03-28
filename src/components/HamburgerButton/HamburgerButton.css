@@ -26,6 +26,10 @@
   top: -9px;
 }
 
+.hamburger-button[data-active='true'] {
+  display: none;
+}
+
 .hamburger-button > div::after {
   top: 9px;
 }

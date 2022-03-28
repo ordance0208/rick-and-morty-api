@@ -69,9 +69,9 @@ const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endp
       <SearchBox searchFor={heading.toLowerCase()} setQueryString={setQueryString} />
       <Filters setStatusFilter={setStatusFilter} setGenderFilter={setGenderFilter} setSpeciesFilter={setSpeciesFilter}/>
       <CardContainer>
-        {error ? 'Err' : children}
+        {error ? <p style={{'textAlign' : 'center'}}>No Results</p> : children}
       </CardContainer>
-      {dataInfo && <ReactPaginate 
+      {(dataInfo && !error) && <ReactPaginate 
         renderOnZeroPageCount={null}
         // Prevents printing a warning message to the console
         pageCount={dataInfo.pages}

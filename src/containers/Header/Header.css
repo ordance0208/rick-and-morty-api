@@ -49,7 +49,7 @@
     width: 250px;
     background: rgb(27, 27, 27);
     border-left: 3px solid #333;
-    top: 0;
+    top: var(--header-height);
     bottom: 0;
     right: -100%;
     left: unset;
