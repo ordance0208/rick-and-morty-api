@@ -14,6 +14,7 @@
   background: var(--primary-color);
   align-self: center;
   position: relative;
+  transition: transform 400ms ease;
 }
 
 .hamburger-button > div::before,
@@ -24,14 +25,24 @@
   height: inherit;
   background: inherit;
   top: -9px;
-}
-
-.hamburger-button[data-active='true'] {
-  display: none;
+  transition: top 400ms ease 400ms, transform 400ms ease;
 }
 
 .hamburger-button > div::after {
   top: 9px;
+}
+
+.hamburger-button[data-active='true'] > div {
+  transform: rotate(45deg);
+  transition: transform 400ms ease 400ms;
+}
+
+.hamburger-button[data-active='true'] > div::before,
+.hamburger-button[data-active='true'] > div::after {
+  transition: top 200ms ease, transform 400ms ease 400ms;
+
+  top: 0;
+  transform: rotate(90deg);
 }
 
 

@@ -5,14 +5,14 @@ import HamburgerButton from '../../components/HamburgerButton/HamburgerButton';
 import './Header.css';
 
 const Header = () => {
-  const [hamburgerMenuOpened, setToggleHamburgerMenuOpened] = useState(false);
+  const [menuOpened, setMenuOpened] = useState(false);
 
-  const openHamburgerButton = () => {
-    setToggleHamburgerMenuOpened(true);
+  const openMenu = () => {
+    setMenuOpened(true);
   };
 
-  const closeHamburgerButton = () => {
-    setToggleHamburgerMenuOpened(false);
+  const closeMenu = () => {
+    setMenuOpened(false);
   };
 
   return (
@@ -20,15 +20,15 @@ const Header = () => {
       <Container>
         <h1><span className='text-primary'>The Rick & Morty Library</span></h1>
         <nav className='main-nav'>
-          <ul className={hamburgerMenuOpened ? 'active' : ''}>
-            <li><NavLink activeClassName='active-nav-link' exact to='/' onClick={closeHamburgerButton}>Home</NavLink></li>
-            <li><NavLink activeClassName='active-nav-link' to='/characters' onClick={closeHamburgerButton}>Characters</NavLink></li>
-            <li><NavLink activeClassName='active-nav-link' to='/locations' onClick={closeHamburgerButton}>Locations</NavLink></li>
-            <li><NavLink activeClassName='active-nav-link' to='/episodes' onClick={closeHamburgerButton}>Episodes</NavLink></li>
-            <li><NavLink activeClassName='active-nav-link' to='/about' onClick={closeHamburgerButton}>About</NavLink></li>
+          <ul className={menuOpened ? 'active' : ''}>
+            <li><NavLink activeClassName='active-nav-link' exact to='/' onClick={closeMenu}>Home</NavLink></li>
+            <li><NavLink activeClassName='active-nav-link' to='/characters' onClick={closeMenu}>Characters</NavLink></li>
+            <li><NavLink activeClassName='active-nav-link' to='/locations' onClick={closeMenu}>Locations</NavLink></li>
+            <li><NavLink activeClassName='active-nav-link' to='/episodes' onClick={closeMenu}>Episodes</NavLink></li>
+            <li><NavLink activeClassName='active-nav-link' to='/about' onClick={closeMenu}>About</NavLink></li>
           </ul>
         </nav>
-        <HamburgerButton onClick={openHamburgerButton} buttonActive={hamburgerMenuOpened}/>    
+        <HamburgerButton onClick={menuOpened ? closeMenu : openMenu} menuOpened={menuOpened}/>    
       </Container>
     </header>
   )

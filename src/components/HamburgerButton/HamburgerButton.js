@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
 import './HamburgerButton.css';
 
-const HamburgerButton = ({onClick, buttonActive}) => {
+const HamburgerButton = ({menuOpened, onClick}) => {
   return (
-    <div onClick={onClick} data-active={buttonActive} className='hamburger-button'>
+    <div onClick={onClick} data-active={menuOpened} className='hamburger-button'>
       <div></div>
     </div>
   )
