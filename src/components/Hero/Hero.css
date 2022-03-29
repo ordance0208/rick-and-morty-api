@@ -18,9 +18,8 @@
 
 .hero .hero-heading {
   color: #fafafa;
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin: 1rem 0;
-  font-weight: 300;
 }
 
 .hero .hero-text {
@@ -31,7 +30,7 @@
 
 @media screen and (max-width: 768px) {
   .hero .hero-image {
-    width: 100%;
+    width: 85%;
   }
 
   .hero .hero-heading {
@@ -44,24 +43,16 @@
 }
 
 @media screen and (max-width: 480px) {
-  .hero .hero-image {
-    width: 100%;
-  }
-
   .hero .hero-heading  {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .hero .hero-text {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 380px) {
-  .hero .hero-heading  {
-    font-size: 1.7rem;
-  }
-
   .hero .hero-text {
     font-size: 1.2rem;
   }
