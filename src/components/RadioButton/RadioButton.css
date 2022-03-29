@@ -7,11 +7,7 @@
   color: #fafafa;
   cursor: pointer;
   transition: background 200ms ease;
-  margin-right: 1rem;
-}
-
-.radio-button:last-child {
-  margin: 0;
+  margin: 0 1rem 1rem 0;
 }
 
 .radio-button:hover {

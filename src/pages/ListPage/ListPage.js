@@ -5,7 +5,7 @@ import SearchBox from '../../components/SearchBox/SearchBox';
 import Filters from '../../containers/Filters/Filters';
 import './ListPage.css'
 
-const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endpoint, error }) => {
+const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endpoint, error, filtersDisabled }) => {
 
   //#region filters
   const [queryString, setQueryString] = useState('');
@@ -67,7 +67,7 @@ const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endp
     <div className='list-page'>
       <h1 className='list-page-heading'>{heading}</h1>
       <SearchBox searchFor={heading.toLowerCase()} setQueryString={setQueryString} />
-      <Filters setStatusFilter={setStatusFilter} setGenderFilter={setGenderFilter} setSpeciesFilter={setSpeciesFilter}/>
+      {filtersDisabled || <Filters setStatusFilter={setStatusFilter} setGenderFilter={setGenderFilter} setSpeciesFilter={setSpeciesFilter}/>}
       <CardContainer>
         {error ? <p style={{'textAlign' : 'center'}}>No Results</p> : children}
       </CardContainer>

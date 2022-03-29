@@ -16,7 +16,7 @@ const Locations = () => {
   return (
     <div className='locations'>
       <Container>
-        <ListPage heading={'Locations'} dataInfo={dataInfo} urlToFetch={urlToFetch} error={error} setUrlToFetch={setUrlToFetch}>
+        <ListPage heading={'Locations'} dataInfo={dataInfo} urlToFetch={urlToFetch} filtersDisabled={true} error={error} setUrlToFetch={setUrlToFetch}>
         {locationsData.map((location) => {
           return <LocationCard location={location} key={location.id}/>
         })}

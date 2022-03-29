@@ -31,7 +31,7 @@ function App() {
           <Route path='/locations' component={Locations} />
           <Route path='/location/:id' component={LocationDetails} />
           <Route path='/episodes' component={Episodes}/>
-          <Route path='/episdoe/:id' component={EpisodeDetails} />
+          <Route path='/episode/:id' component={EpisodeDetails} />
           <Route path='/about' component={About} />
           <Route path='*' component={NotFound} />
         </Switch>

@@ -16,7 +16,7 @@ const Episodes = () => {
   return (
     <div className='episodes'>
       <Container>
-        <ListPage heading={'Episodes'} dataInfo={dataInfo} urlToFetch={urlToFetch} setUrlToFetch={setUrlToFetch} error={error}>
+        <ListPage heading={'Episodes'} dataInfo={dataInfo} urlToFetch={urlToFetch} filtersDisabled={true} setUrlToFetch={setUrlToFetch} error={error}>
           {episodesData.map((episode) => {
             return <EpisodeCard episode={episode} key={episode.id}/>        
           })}
