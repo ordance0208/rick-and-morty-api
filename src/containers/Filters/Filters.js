@@ -1,20 +1,39 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TypeFilter from '../../components/TypeFilter/TypeFilter';
 import './Filters.css';
 
 const Filters = ({setStatusFilter, setGenderFilter, setSpeciesFilter}) => {
   const [hidden, setHidden] = useState(true);
-  const [reset, setReset] = useState(null);
+
+  const [statusFilterValue, setStatusFilterValue] = useState('');
+  const [genderFilterValue, setGenderFilterValue] = useState('');
+  const [speciesFilterValue, setSpeciesFilterValue] = useState('');
+
+  const updateFilters = () => {
+    setStatusFilter(statusFilterValue);
+    setGenderFilter(genderFilterValue);
+    setSpeciesFilter(speciesFilterValue);
+  };
+
+  const clearFilters = () => {
+    setStatusFilterValue('');
+    setGenderFilterValue('');
+    setSpeciesFilterValue('');
+  };
+
+  useEffect(updateFilters, [statusFilterValue, genderFilterValue, speciesFilterValue]);
 
   return (
     <div className='filters'>
-      <button className='toggle-show-filters' onClick={() => setHidden(!hidden)}>{hidden ? 'Show Filters' : 'Hide Filters'}</button>
-      <button className='toggle-show-filters' onClick={reset}>Reset Filters</button>
+      <div className='filters-button-group'>
+        <button className='filters-button' onClick={() => setHidden(!hidden)}>{hidden ? 'Show Filters' : 'Hide Filters'}</button>
+        <button className='filters-button' onClick={clearFilters}>Reset Filters</button>
+      </div>
       {hidden || <div className='filter-group'>
-      <TypeFilter setReset={setReset} filterFields={['Alive', 'Dead', 'Unknown']} setFilter={setStatusFilter} filterTitle='Status'/>
-      <TypeFilter setReset={setReset} filterFields={['Male', 'Female', 'Genderless', 'Unknown']} setFilter={setGenderFilter} filterTitle='Gender'/>
-      <TypeFilter setReset={setReset} filterFields={['Human', 'Humanoid', 'Poopybutthole', 'Mythological', 'Unknown', 'Animal', 'Robot', 'Cronenberg', 'Planet', 'Alien', 'Disease']}
-      setFilter={setSpeciesFilter} filterTitle='Species'/>
+        <TypeFilter filterFields={['Alive', 'Dead', 'Unknown']} filterTitle='Status' setFilterValue={setStatusFilterValue} filterValue={statusFilterValue}/>
+        <TypeFilter filterFields={['Male', 'Female', 'Genderless', 'Unknown']} filterTitle='Gender' setFilterValue={setGenderFilterValue} filterValue={genderFilterValue}/>
+        <TypeFilter filterFields={['Human', 'Humanoid', 'Poopybutthole', 'Mythological', 'Unknown', 'Animal', 'Robot', 'Cronenberg', 'Planet', 'Alien', 'Disease']}
+        filterTitle='Species' setFilterValue={setSpeciesFilterValue} filterValue={speciesFilterValue}/>
       </div> }     
     </div>
   );

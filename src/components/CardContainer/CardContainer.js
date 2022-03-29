@@ -1,6 +1,6 @@
 import './CardContainer.css';
 
-const  CardContainer = ({children}) => {
+const CardContainer = ({children}) => {
   return (
     <div className='card-container'>
       {children}

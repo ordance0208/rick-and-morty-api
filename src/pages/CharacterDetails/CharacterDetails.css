@@ -5,10 +5,16 @@
   align-items: center;
 }
 
-@media screen and (max-height:600px) {
-  .character-details .container  {
+@media screen and (max-height: 600px) {
+  .character-details .container {
     height: auto;
     padding: 1.5rem 0;
   }
 }
 
+@media screen and (max-width: 480px) {
+  .character-details .container {
+    height: auto;
+    padding: 1.5rem 0;
+  }
+}

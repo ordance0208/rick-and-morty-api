@@ -11,7 +11,7 @@ const Characters = () => {
   const [urlToFetch, setUrlToFetch] = useState('https://rickandmortyapi.com/api/character/?page=1');
   const [error, setError] = useState(false);
 
-  useEffect(() => {fetchPage(urlToFetch, setCharactersData, setDataInfo, setError);}, [urlToFetch]);
+  useEffect(() => {fetchPage(urlToFetch, setCharactersData, setDataInfo, setError); console.log(urlToFetch)}, [urlToFetch]);
 
   return (
     <div className='characters'>

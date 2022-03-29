@@ -1,16 +1,16 @@
 import { Route, Switch } from 'react-router-dom';
 import DataContext from '../../contexts/DataContext';
+import TitleComponent from '../../helpers/TitleComponent/TitleComponent';
 import Header from '../Header/Header';
 import Home from '../../pages/Home/Home';
-import Locations from '../../pages/Locations/Locations';
-import Episodes from '../../pages/Episodes/Episodes';
 import Characters from '../../pages/Characters/Characters'
 import CharacterDetails from '../../pages/CharacterDetails/CharacterDetails';
+import Locations from '../../pages/Locations/Locations';
 import LocationDetails from '../../pages/LocationDetails/LocationDetails';
-import NotFound from '../../pages/NotFound/NotFound';
-import About from '../../pages/About/About';
+import Episodes from '../../pages/Episodes/Episodes';
 import EpisodeDetails from '../../pages/EpisodeDetails/EpisodeDetails';
-import TitleComponent from '../../helper/TitleComponent';
+import About from '../../pages/About/About';
+import NotFound from '../../pages/NotFound/NotFound';
 import './App.css';
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
   return (
     <div className="App">
       <DataContext.Provider value={apiEndpoints}>
+        <Route path='/' component={TitleComponent} />
         <Header />
         <Switch>
           <Route path='/' exact component={Home} />
@@ -35,7 +36,6 @@ function App() {
           <Route path='/about' component={About} />
           <Route path='*' component={NotFound} />
         </Switch>
-        <Route path='/' component={TitleComponent} />
       </DataContext.Provider>
     </div>
   );

@@ -6,17 +6,29 @@
   flex-direction: column;
 }
 
-.not-found h1 {
-  font-size: 10rem;
-  color: rgb(149, 223, 40);
-}
-
 .not-found h2 {
   font-size: 4rem;
-  color: rgb(149, 223, 40);
+  color: var(--primary-color);
 }
 
 .not-found h3 {
-  color: rgb(149, 223, 40);
-  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-size: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+  .not-found h2 {
+    font-size: 2rem;
+  }
+
+  .not-found h3 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .not-found h3 {
+    font-size: 0.8rem;
+  }
+}
+

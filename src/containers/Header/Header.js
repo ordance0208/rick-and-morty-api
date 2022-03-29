@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Container from '../../auxillary/Container/Container';
 import HamburgerButton from '../../components/HamburgerButton/HamburgerButton';
+import HamburgerMenuOverlay from '../../helpers/HamburgerMenuOverlay/HamburgerMenuOverlay';
 import './Header.css';
 
 const Header = () => {
@@ -18,6 +19,7 @@ const Header = () => {
   return (
     <header id='header'>
       <Container>
+        {menuOpened && <HamburgerMenuOverlay onClick={closeMenu}/>}
         <h1><span className='text-primary'>The Rick & Morty Library</span></h1>
         <nav className='main-nav'>
           <ul className={menuOpened ? 'active' : ''}>

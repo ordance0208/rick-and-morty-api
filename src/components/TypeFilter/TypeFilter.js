@@ -2,20 +2,16 @@ import { useEffect, useState } from 'react';
 import RadioButton from '../RadioButton/RadioButton';
 import './TypeFilter.css';
 
-const TypeFilter = ({filterFields, setFilter, filterTitle, setReset}) => {
+const TypeFilter = ({filterFields, filterTitle, setFilterValue, filterValue}) => {
   const [active, setActive] = useState('');
 
   useEffect(() => {
-    setFilter(active);
-  }, [active])
-
-  const resetFilters = () => {
-    setActive('');
-  };
+    setFilterValue(active);
+  }, [active]);
 
   useEffect(() => {
-    setReset(resetFilters);
-  }, []);
+    setActive(filterValue);
+  }, [filterValue]);
 
   return (
     <div className='type-filter'>

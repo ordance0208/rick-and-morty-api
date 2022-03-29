@@ -4,7 +4,13 @@
   flex-direction: column;
 }
 
-.filters .toggle-show-filters {
+.filters .filters-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.filters .filters-button-group .filters-button {
   background: none;
   border: none;
   color: var(--primary-color);
@@ -12,7 +18,7 @@
   outline: none;
 }
 
-.filters .toggle-show-filters:hover {
+.filters .filters-button:hover {
   cursor: pointer;
   text-decoration: underline;
 }

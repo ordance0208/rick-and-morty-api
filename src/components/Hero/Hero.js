@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className='hero'>
       <Container>
-        <img className='hero-image' src={require('../../Assets/images/rick-and-morty-header-image.png')}/>
+        <img className='hero-image' src={require('../../Assets/images/rick-and-morty-header-image.png')} alt='hero page'/>
         <h1 className='hero-heading'>The Rick & Morty Library</h1>
         <p className='hero-text'>Here you will find all the characters, locations and episodes from the TV show Rick and Morty.</p>
       </Container>
