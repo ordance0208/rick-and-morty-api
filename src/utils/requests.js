@@ -28,12 +28,11 @@ export const fetchSingleSubject = async (urlToFetch, setData) => {
   }
 };
 
-export const fetchMultipleCharacters = async (
-  urlToFetch,
-  objWithCharacters,
-  setCharacters,
-  objToLookFor
-) => {
+// The function argument objToLookFor is a string about what to search for
+// in the given object since the characters in the location object are
+// named residents, while in the episodes object the characters are named 
+// just characters
+export const fetchMultipleCharacters = async (urlToFetch,objWithCharacters,setCharacters,objToLookFor) => {
   // Return for the initial call when the location/episode object is empty
   if (Object.keys(objWithCharacters).length === 0) return;
 

@@ -8,17 +8,17 @@ const About = () => {
       <Container>
         <TextGroup heading='About This Project'>
           <p>
-            The Rick and Morty Library is a site where you can find all the characters, locations and episodes from the TV show
-            Rick and Morty. You can get additional info by pressing on one of the cards.
-            This is a project that I did for my web development portfolio. The project utilizes the Rick and Morty API by Axel Fuhrmann, you can learn more about it
+            Here you will find all the characters, locations and episodes from the TV show
+            Rick and Morty. You can get additional information by clicking on the cards.
+            This is a project that I did for my web development portfolio. This project utilizes the Rick and Morty API by Axel Fuhrmann, you can learn more about it
             by clicking on the link below.
-            Rick and Morty is created by Justin Roiland and Dan Harmon for Adult Swim. The data and images are used without 
-            claim of ownership and belong to their respective owners.
+            <strong> Rick and Morty is created by Justin Roiland and Dan Harmon for Adult Swim. The data and images are used without 
+            claim of ownership and belong to their respective owners.</strong>
           </p>
         </TextGroup>
         <TextGroup heading='About Me'>
           <p>
-            Hi, I am Ordan, I am 20 years old and my passion is web development. I am an entry level front end developer constantly expanding my knowledge on the web development field and looking forward into getting an intership.
+            I am Ordan Gramatov a guy with passion for web development. I am an entry level front end developer constantly expanding my knowledge on the web development field and looking forward into getting an intership.
           </p>
         </TextGroup>
         <TextGroup heading='Links'>
