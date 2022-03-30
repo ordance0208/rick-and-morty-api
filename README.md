@@ -7,5 +7,6 @@ This is a project that I did for my web development portfolio. The project utili
 claim of ownership and belong to their respective owners.**
 
 ## Links
+[Live Demo](https://therickandmortylibrary.netlify.app/)  
 [My LinkedIn](https://www.linkedin.com/in/ordan-gramatov/)  
 [Rick and Morty API](https://rickandmortyapi.com/)
