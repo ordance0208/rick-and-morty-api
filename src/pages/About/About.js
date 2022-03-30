@@ -18,7 +18,7 @@ const About = () => {
         </TextGroup>
         <TextGroup heading='About Me'>
           <p>
-            I am Ordan Gramatov a guy with passion for web development. I am an entry level front end developer constantly expanding my knowledge on the web development field and looking forward into getting an intership.
+            I am Ordan Gramatov, a guy with passion for web development. I am an entry level front end developer constantly expanding my knowledge on the web development field and looking forward into getting an intership.
           </p>
         </TextGroup>
         <TextGroup heading='Links'>
