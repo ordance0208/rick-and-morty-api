@@ -8,7 +8,7 @@ export const fetchPage = async (urlToFetch, setResults, setInfo, setError) => {
       setInfo({})
       throw new Error('Not Found');
     }
-
+    
     setError(false);
     setResults(data.results);
     setInfo(data.info);

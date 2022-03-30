@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import CardContainer from '../../components/CardContainer/CardContainer';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import Filters from '../../components/Filters/Filters';
+import Paginator from '../../components/Paginator/Paginator';
 import './ListPage.css'
 
 const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endpoint, error, filtersDisabled }) => {
@@ -16,15 +17,6 @@ const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endp
 
   const [selectedPageIndex, setSelectedPageIndex] = useState(1);
 
-  const [pageRange, setPageRange] = useState(5);
-  const [marginPages, setMarginPages] = useState(2);
-
-  
-  const handleResize = () => {
-    setPageRange(window.innerWidth < 650 ? 1 : 5);
-    setMarginPages(window.innerWidth < 650 ? 1 : 2);
-  }
-
   // Constructs a URL according to the filters and page number 
   const urlConstructor = () => {
     const url = endpoint;
@@ -34,18 +26,6 @@ const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endp
   
     return urlToFetch;
   }
-
-  // Set the paginator page range and margin pages based on screen size
-  // And on resize
-  useEffect(() => {
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    }
-  }, []);
 
   // Change the URL to fetch when any of the filters change
   useEffect(() => {
@@ -70,22 +50,8 @@ const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endp
       {filtersDisabled || <Filters setStatusFilter={setStatusFilter} setGenderFilter={setGenderFilter} setSpeciesFilter={setSpeciesFilter}/>}
       <CardContainer>
         {error ? <p style={{'textAlign' : 'center'}}>No Results</p> : children}
-      </CardContainer>
-      {(dataInfo && !error) && <ReactPaginate 
-        renderOnZeroPageCount={null}
-        // Prevents printing a warning message to the console
-        pageCount={dataInfo.pages}
-        pageRangeDisplayed={pageRange}
-        marginPagesDisplayed={marginPages}
-        className='paginator'
-        pageClassName='paginator-page'
-        pageLinkClassName='paginator-link'
-        previousClassName='paginator-prev-button'
-        nextClassName='paginator-next-button'
-        activeClassName='paginator-active-page'
-        onPageChange={(e) => setSelectedPageIndex(e.selected + 1)}
-        forcePage={selectedPageIndex - 1}
-        />}
+      </CardContainer>     
+        {(dataInfo && !error) && <Paginator pageCount={dataInfo.pages} onPageChange={setSelectedPageIndex} selectedPageIndex={selectedPageIndex}/>}
     </div>
   );
 };

@@ -8,12 +8,7 @@ a {
   padding: 1rem;
   max-width: 320px;
   height: 385px;
-  /* border-bottom: 1rem solid var(--primary-color); */
   transition: all 400ms ease;
-}
-
-.character-card:hover {
-  border-bottom: 0rem solid var(--primary-color);
 }
 
 .character-card:hover .image-holder .character-image {
@@ -67,6 +62,12 @@ a {
   text-align: left;
 }
 
-.card .character-info .character-name {
+.character-card .character-info .character-name {
   margin-bottom: 0.2rem;
+}
+
+@media screen and (max-width:300px) {
+  .character-card {
+    height: 325px;
+  }
 }

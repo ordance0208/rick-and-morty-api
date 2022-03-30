@@ -20,7 +20,7 @@ const Header = () => {
     <header id='header'>
       <Container>
         {menuOpened && <HamburgerMenuOverlay onClick={closeMenu}/>}
-        <h1><span className='text-primary'>The Rick & Morty Library</span></h1>
+        <h1 className='title'>The Rick & Morty Library</h1>
         <nav className='main-nav'>
           <ul className={menuOpened ? 'active' : ''}>
             <li><NavLink activeClassName='active-nav-link' exact to='/' onClick={closeMenu}>Home</NavLink></li>
