@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import Container from '../../auxillary/Container/Container';
+import Container from '../../components/Container/Container';
 import EpisodeInfoContainer from '../../components/EpisodeInfoContainer/EpisodeInfoContainer';
 import { fetchSingleSubject, fetchMultipleCharacters } from '../../utils/requests';
 import DataContext from '../../contexts/DataContext';

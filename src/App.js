@@ -1,16 +1,16 @@
 import { Route, Switch } from 'react-router-dom';
-import DataContext from '../../contexts/DataContext';
-import TitleComponent from '../../helpers/TitleComponent/TitleComponent';
-import Header from '../Header/Header';
-import Home from '../../pages/Home/Home';
-import Characters from '../../pages/Characters/Characters'
-import CharacterDetails from '../../pages/CharacterDetails/CharacterDetails';
-import Locations from '../../pages/Locations/Locations';
-import LocationDetails from '../../pages/LocationDetails/LocationDetails';
-import Episodes from '../../pages/Episodes/Episodes';
-import EpisodeDetails from '../../pages/EpisodeDetails/EpisodeDetails';
-import About from '../../pages/About/About';
-import NotFound from '../../pages/NotFound/NotFound';
+import DataContext from './contexts/DataContext';
+import TitleComponent from './helpers/TitleComponent/TitleComponent';
+import Header from './components/Header/Header';
+import Home from './pages/Home/Home';
+import Characters from './pages/Characters/Characters'
+import CharacterDetails from './pages/CharacterDetails/CharacterDetails';
+import Locations from './pages/Locations/Locations';
+import LocationDetails from './pages/LocationDetails/LocationDetails';
+import Episodes from './pages/Episodes/Episodes';
+import EpisodeDetails from './pages/EpisodeDetails/EpisodeDetails';
+import About from './pages/About/About';
+import NotFound from './pages/NotFound/NotFound';
 import './App.css';
 
 function App() {

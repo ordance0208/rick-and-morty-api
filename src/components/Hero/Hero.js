@@ -1,4 +1,4 @@
-import Container from '../../auxillary/Container/Container';
+import Container from '../Container/Container';
 import './Hero.css';
 
 const Hero = () => {

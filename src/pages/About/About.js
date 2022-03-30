@@ -1,4 +1,4 @@
-import Container from '../../auxillary/Container/Container';
+import Container from '../../components/Container/Container';
 import TextGroup from '../../components/TextGroup/TextGroup';
 import './About.css';
 

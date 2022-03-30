@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ListPage from '../ListPage/ListPage';
 import CharacterCard from '../../components/CharacterCard/CharacterCard';
-import Container from '../../auxillary/Container/Container';
+import Container from '../../components/Container/Container';
 import { fetchPage } from '../../utils/requests';
 import './Characters.css';
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import CardContainer from '../../components/CardContainer/CardContainer';
 import SearchBox from '../../components/SearchBox/SearchBox';
-import Filters from '../../containers/Filters/Filters';
+import Filters from '../../components/Filters/Filters';
 import './ListPage.css'
 
 const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endpoint, error, filtersDisabled }) => {

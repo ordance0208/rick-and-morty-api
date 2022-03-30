@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import TypeFilter from '../../components/TypeFilter/TypeFilter';
+import TypeFilter from '../TypeFilter/TypeFilter';
 import './Filters.css';
 
 const Filters = ({setStatusFilter, setGenderFilter, setSpeciesFilter}) => {

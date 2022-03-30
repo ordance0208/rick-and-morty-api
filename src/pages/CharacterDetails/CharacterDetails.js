@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import CharacterInfoContainer from '../../components/CharacterInfoContainer/CharacterInfoContainer';
-import Container from '../../auxillary/Container/Container';
+import Container from '../../components/Container/Container';
 import { fetchSingleSubject } from '../../utils/requests';
 import DataContext from '../../contexts/DataContext';
 import './CharacterDetails.css';
