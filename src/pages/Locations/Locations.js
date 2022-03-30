@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import ListPage from '../ListPage/ListPage';
 import LocationCard from '../../components/LocationCard/LocationCard';
 import Container from '../../auxillary/Container/Container';
-import { fetchPage } from '../../requests/requests';
+import { fetchPage } from '../../utils/requests';
 import './Locations.css';
 
 const Locations = () => {

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import Container from '../../auxillary/Container/Container';
 import EpisodeInfoContainer from '../../components/EpisodeInfoContainer/EpisodeInfoContainer';
-import { fetchSingleSubject, fetchMultipleCharacters } from '../../requests/requests';
+import { fetchSingleSubject, fetchMultipleCharacters } from '../../utils/requests';
 import DataContext from '../../contexts/DataContext';
 import './EpisodeDetails.css';
 

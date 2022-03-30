@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import Container from '../../auxillary/Container/Container';
 import LocationInfoContainer from '../../components/LocationInfoContainer/LocationInfoContainer';
 import DataContext from '../../contexts/DataContext';
-import { fetchMultipleCharacters, fetchSingleSubject } from '../../requests/requests';
+import { fetchMultipleCharacters, fetchSingleSubject } from '../../utils/requests';
 import './LocationDetails.css';
 
 const LocationDetails = ({ match }) => {
