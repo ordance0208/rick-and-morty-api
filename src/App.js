@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import DataContext from './contexts/DataContext';
+import ApiContext from './contexts/ApiContext';
 import TitleComponent from './helpers/TitleComponent/TitleComponent';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <DataContext.Provider value={apiEndpoints}>
+      <ApiContext.Provider value={apiEndpoints}>
         <Route path='/' component={TitleComponent} />
         <Header />
         <Switch>
@@ -36,7 +36,7 @@ function App() {
           <Route path='/about' component={About} />
           <Route path='*' component={NotFound} />
         </Switch>
-      </DataContext.Provider>
+      </ApiContext.Provider>
     </div>
   );
 }

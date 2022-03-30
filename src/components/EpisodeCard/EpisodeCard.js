@@ -3,7 +3,7 @@ import './EpisodeCard.css';
 
 const EpisodeCard = ({episode}) => {
   return (
-    <Link to={`episode/${episode.id}`}>
+    <Link className='card-link' to={`episode/${episode.id}`}>
       <div className='episode-card'>
         <div className='episode-info'>
           <h3 className='episode-name'>{episode.name}</h3>

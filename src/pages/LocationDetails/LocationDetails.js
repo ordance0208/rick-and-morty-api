@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import Container from '../../components/Container/Container';
 import LocationInfoContainer from '../../components/LocationInfoContainer/LocationInfoContainer';
-import DataContext from '../../contexts/DataContext';
+import ApiContext from '../../contexts/ApiContext';
 import { fetchMultipleCharacters, fetchSingleSubject } from '../../utils/requests';
 import './LocationDetails.css';
 
@@ -9,8 +9,8 @@ const LocationDetails = ({ match }) => {
   const [location, setLocation] = useState({});
   const [locationResidents, setLocationResidents] = useState([]);
 
-  const { locations: locationEndpoint } = useContext(DataContext);
-  const { characters: characterEndpoint } = useContext(DataContext);
+  const { locations: locationEndpoint } = useContext(ApiContext);
+  const { characters: characterEndpoint } = useContext(ApiContext);
 
   useEffect(() => fetchSingleSubject(`${locationEndpoint}${match.params.id}`, setLocation), []);
   useEffect(() => fetchMultipleCharacters(characterEndpoint, location, setLocationResidents, 'residents'), [location]);

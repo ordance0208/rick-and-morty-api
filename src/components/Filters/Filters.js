@@ -32,7 +32,7 @@ const Filters = ({setStatusFilter, setGenderFilter, setSpeciesFilter}) => {
       {hidden || <div className='filter-group'>
         <TypeFilter filterFields={['Alive', 'Dead', 'Unknown']} filterTitle='Status' setFilterValue={setStatusFilterValue} filterValue={statusFilterValue}/>
         <TypeFilter filterFields={['Male', 'Female', 'Genderless', 'Unknown']} filterTitle='Gender' setFilterValue={setGenderFilterValue} filterValue={genderFilterValue}/>
-        <TypeFilter filterFields={['Human', 'Humanoid', 'Poopybutthole', 'Mythological', 'Unknown', 'Animal', 'Robot', 'Cronenberg', 'Planet', 'Alien', 'Disease']}
+        <TypeFilter filterFields={['Human', 'Humanoid', 'Poopybutthole', 'Mythological', 'Unknown', 'Animal', 'Robot', 'Cronenberg', 'Alien', 'Disease']}
         filterTitle='Species' setFilterValue={setSpeciesFilterValue} filterValue={speciesFilterValue}/>
       </div> }     
     </div>

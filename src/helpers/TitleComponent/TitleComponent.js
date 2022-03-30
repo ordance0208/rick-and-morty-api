@@ -1,4 +1,7 @@
-const TitleComponent = ({location}) => {
+// This component is always rendered, it is used to update the document title dynamically
+// when the route has changed, it takes the pathname removes the /, capitalizes the first letter
+// and then appends it to the prefix (the site name)
+const TitleComponent = ({ location }) => {
   const documentTitlePrefix = 'Rick & Morty Library | ';
 
   let tabTitle = location.pathname.substring(1);

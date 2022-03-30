@@ -8,6 +8,7 @@ import './Header.css';
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
 
+  // Open/Close hamburger menu
   const openMenu = () => {
     setMenuOpened(true);
   };

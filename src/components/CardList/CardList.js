@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import ReactPaginate from 'react-paginate';
 import CardContainer from '../../components/CardContainer/CardContainer';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import Filters from '../../components/Filters/Filters';
 import Paginator from '../../components/Paginator/Paginator';
-import './ListPage.css'
+import './CardList.css';
 
-const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endpoint, error, filtersDisabled }) => {
+const CardList = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch, error, filtersDisabled }) => {
 
   //#region filters
   const [queryString, setQueryString] = useState('');
@@ -19,41 +18,39 @@ const ListPage = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch: endp
 
   // Constructs a URL according to the filters and page number 
   const urlConstructor = () => {
-    const url = endpoint;
-    
-    const indexToSliceTo = url.indexOf('=');
-    const urlToFetch = `${url.slice(0, indexToSliceTo + 1)}${selectedPageIndex}&name=${queryString}&status=${statusFilter}&gender=${genderFilter}&species=${speciesFilter}`;
+    const indexToSliceTo = urlToFetch.indexOf('=');
+    const url = `${urlToFetch.slice(0, indexToSliceTo + 1)}${selectedPageIndex}&name=${queryString}&status=${statusFilter}&gender=${genderFilter}&species=${speciesFilter}`;
   
-    return urlToFetch;
+    return url;;
   }
 
-  // Change the URL to fetch when any of the filters change
+  // Changes the URL to fetch when any of the filters change
   useEffect(() => {
     setSelectedPageIndex(1);
     setUrlToFetch(urlConstructor());    
   }, [queryString, statusFilter, speciesFilter, genderFilter]);
 
-  // Change the URL to fetch when the page is changed from the paginator
+  // Changes the URL to fetch when the page is changed from the paginator
   useEffect(() => {
     setUrlToFetch(urlConstructor());
   }, [selectedPageIndex]);
 
-  // Scroll to top when the newest page renders
+  // Scrolls to top when the newest page renders
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [children]);
 
   return (
-    <div className='list-page'>
-      <h1 className='list-page-heading'>{heading}</h1>
+    <div className='card-list'>
+      <h1 className='card-list-heading'>{heading}</h1>
       <SearchBox searchFor={heading.toLowerCase()} setQueryString={setQueryString} />
       {filtersDisabled || <Filters setStatusFilter={setStatusFilter} setGenderFilter={setGenderFilter} setSpeciesFilter={setSpeciesFilter}/>}
       <CardContainer>
         {error ? <p style={{'textAlign' : 'center'}}>No Results</p> : children}
       </CardContainer>     
-        {(dataInfo && !error) && <Paginator pageCount={dataInfo.pages} onPageChange={setSelectedPageIndex} selectedPageIndex={selectedPageIndex}/>}
+        {(!error) && <Paginator pageCount={dataInfo.pages} onPageChange={setSelectedPageIndex} selectedPageIndex={selectedPageIndex}/>}
     </div>
   );
 };
 
-export default ListPage;
+export default CardList;

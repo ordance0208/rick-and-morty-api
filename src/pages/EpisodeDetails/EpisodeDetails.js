@@ -1,16 +1,16 @@
 import { useState, useEffect, useContext } from 'react';
 import Container from '../../components/Container/Container';
 import EpisodeInfoContainer from '../../components/EpisodeInfoContainer/EpisodeInfoContainer';
+import ApiContext from '../../contexts/ApiContext';
 import { fetchSingleSubject, fetchMultipleCharacters } from '../../utils/requests';
-import DataContext from '../../contexts/DataContext';
 import './EpisodeDetails.css';
 
-const EpisodeDetails = ({match}) => {
+const EpisodeDetails = ({ match }) => {
   const [episode, setEpisode] = useState({});
   const [episodeCharacters, setEpisodeCharacters] = useState([]);
 
-  const { episodes: episodesEndpoint } = useContext(DataContext);
-  const { characters: charactersEndpoint } = useContext(DataContext);
+  const { episodes: episodesEndpoint } = useContext(ApiContext);
+  const { characters: charactersEndpoint } = useContext(ApiContext);
 
   useEffect(() => fetchSingleSubject(`${episodesEndpoint}${match.params.id}`, setEpisode), []);
   useEffect(() => fetchMultipleCharacters(charactersEndpoint, episode, setEpisodeCharacters, 'characters'), [episode])

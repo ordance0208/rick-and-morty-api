@@ -3,7 +3,7 @@ import './LocationCard.css';
 
 const LocationCard = ({location}) => {
   return (
-    <Link to={`location/${location.id}`}>
+    <Link className='card-link' to={`location/${location.id}`}>
       <div className='location-card'>
         <div className='location-info'>
           <h3 className='location-name'>{location.name}</h3>

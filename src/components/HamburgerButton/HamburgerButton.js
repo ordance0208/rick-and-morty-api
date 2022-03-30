@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import './HamburgerButton.css';
 
 const HamburgerButton = ({menuOpened, onClick}) => {

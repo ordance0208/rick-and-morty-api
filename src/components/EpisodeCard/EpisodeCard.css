@@ -1,6 +1,6 @@
-a {
+a.card-link {
   text-decoration: none;
-  color: #333;
+  color: blue;
 }
 
 .episode-card {

@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import ListPage from '../ListPage/ListPage';
+import React, { useState, useEffect, useContext } from 'react';
+import ListPage from '../../components/CardList/CardList';
 import CharacterCard from '../../components/CharacterCard/CharacterCard';
 import Container from '../../components/Container/Container';
+import ApiContext from '../../contexts/ApiContext';
 import { fetchPage } from '../../utils/requests';
 import './Characters.css';
 
 const Characters = () => {
   const [charactersData, setCharactersData] = useState([]);
   const [dataInfo, setDataInfo] = useState({});
-  const [urlToFetch, setUrlToFetch] = useState('https://rickandmortyapi.com/api/character/?page=1');
+  const [urlToFetch, setUrlToFetch] = useState('');
   const [error, setError] = useState(false);
 
-  useEffect(() => {fetchPage(urlToFetch, setCharactersData, setDataInfo, setError)}, [urlToFetch]);
+  const { characters } = useContext(ApiContext);
+
+  useEffect(() => { setUrlToFetch(`${characters}?page=1`) } , []);
+  useEffect(() => { fetchPage(urlToFetch, setCharactersData, setDataInfo, setError) }, [urlToFetch]);
 
   return (
     <div className='characters'>

@@ -1,16 +1,20 @@
-import { useEffect, useState } from 'react';
-import ListPage from '../ListPage/ListPage';
+import { useState, useEffect, useContext  } from 'react';
+import ListPage from '../../components/CardList/CardList';
 import EpisodeCard from '../../components/EpisodeCard/EpisodeCard';
 import Container from '../../components/Container/Container';
+import ApiContext from '../../contexts/ApiContext';
 import { fetchPage } from '../../utils/requests';
 import './Episodes.css'
 
 const Episodes = () => {
   const [episodesData, setEpisodesData] = useState([]);
   const [dataInfo, setDataInfo] = useState({});
-  const [urlToFetch, setUrlToFetch] = useState('https://rickandmortyapi.com/api/episode/?page=1');
+  const [urlToFetch, setUrlToFetch] = useState('');
   const [error, setError] = useState(false);
 
+  const { episodes } = useContext(ApiContext);
+
+  useEffect(() => { setUrlToFetch(`${episodes}?page=1`) } , []);
   useEffect(() => fetchPage(urlToFetch, setEpisodesData, setDataInfo, setError), [urlToFetch]);
   
   return (

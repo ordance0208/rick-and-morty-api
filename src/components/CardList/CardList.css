@@ -1,13 +1,13 @@
-.list-page {
+.card-list {
   display: flex;
   flex-direction: column;
 }
 
-.list-page .search-box {
+.card-list .search-box {
   align-self: center;
 }
 
-.list-page .list-page-heading {
+.card-list .card-list-heading {
   color: #fafafa;
   font-size: 2.3rem;
   margin-top: 3rem;
@@ -17,10 +17,10 @@
   position: relative;
 }
 
-.list-page .list-page-heading::after {
+.card-list .card-list-heading::after {
   content: '';
   position: absolute;
-  bottom: -0.4rem;
+  bottom: -0.5rem;
   left: 50%;
   transform: translateX(-50%);
   width: 200px;
