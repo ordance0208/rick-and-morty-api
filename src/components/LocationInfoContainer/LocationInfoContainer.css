@@ -4,7 +4,7 @@
   padding: 1rem;  
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  padding-top: 2rem;
 }
 
 .location-info-container .info-holder {
