@@ -1,7 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
-import Container from '../../components/Container/Container';
-import EpisodeInfoContainer from '../../components/EpisodeInfoContainer/EpisodeInfoContainer';
+import Container from '../../components/UtilityComponents/Container/Container';
+import EpisodeInfoContainer from '../../components/InformationContainers/EpisodeInfoContainer/EpisodeInfoContainer';
 import ApiContext from '../../contexts/ApiContext';
+import extractIds from '../../utils/extractIds';
 import { fetchSingleSubject, fetchMultipleCharacters } from '../../utils/requests';
 import './EpisodeDetails.css';
 
@@ -13,7 +14,11 @@ const EpisodeDetails = ({ match }) => {
   const { characters: charactersEndpoint } = useContext(ApiContext);
 
   useEffect(() => fetchSingleSubject(`${episodesEndpoint}${match.params.id}`, setEpisode), []);
-  useEffect(() => fetchMultipleCharacters(charactersEndpoint, episode, setEpisodeCharacters, 'characters'), [episode])
+  useEffect(() => {
+    if(Object.keys(episode).length === 0 || episode.characters.length === 0) return;
+    const urlSuffix = extractIds(episode.characters);
+    fetchMultipleCharacters(`${charactersEndpoint}${urlSuffix}`, setEpisodeCharacters);
+  }, [episode])
 
   return (
     <div className='episode-details'>

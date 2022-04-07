@@ -1,5 +1,6 @@
 .about {
-  margin-top: 4rem;
+  padding-top: 4rem;
+  min-height: calc(100vh - var(--header-height));
 }
 
 .about div {

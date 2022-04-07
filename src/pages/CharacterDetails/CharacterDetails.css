@@ -1,5 +1,5 @@
 .character-details .container {
-  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,9 +12,3 @@
   }
 }
 
-/* @media screen and (max-width: 480px) {
-  .character-details .container {
-    height: auto;
-    padding: 1.5rem 0;
-  }
-} */

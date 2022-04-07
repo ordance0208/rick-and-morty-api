@@ -1,5 +1,5 @@
-import CardContainer from '../CardContainer/CardContainer';
-import CharacterCard from '../CharacterCard/CharacterCard';
+import CardContainer from '../../UtilityComponents/CardContainer/CardContainer';
+import CharacterCard from '../../Cards/CharacterCard/CharacterCard';
 import './EpisodeInfoContainer.css';
 
 const EpisodeInfoContainer = ({episode, episodeCharacters}) => {

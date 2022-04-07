@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext  } from 'react';
 import ListPage from '../../components/CardList/CardList';
-import EpisodeCard from '../../components/EpisodeCard/EpisodeCard';
-import Container from '../../components/Container/Container';
+import EpisodeCard from '../../components/Cards/EpisodeCard/EpisodeCard';
+import Container from '../../components/UtilityComponents/Container/Container';
 import ApiContext from '../../contexts/ApiContext';
 import { fetchPage } from '../../utils/requests';
 import './Episodes.css'

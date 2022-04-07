@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import CardContainer from '../../components/CardContainer/CardContainer';
-import SearchBox from '../../components/SearchBox/SearchBox';
-import Filters from '../../components/Filters/Filters';
+import CardContainer from '../../components/UtilityComponents/CardContainer/CardContainer';
+import SearchBox from '../../components/FilterComponents/SearchBox/SearchBox';
+import Filters from '../../components/FilterComponents/Filters/Filters';
 import Paginator from '../../components/Paginator/Paginator';
 import './CardList.css';
 

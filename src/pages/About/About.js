@@ -1,5 +1,5 @@
-import Container from '../../components/Container/Container';
-import TextGroup from '../../components/TextGroup/TextGroup';
+import Container from '../../components/UtilityComponents/Container/Container';
+import TextGroup from '../../components/UtilityComponents/TextGroup/TextGroup';
 import './About.css';
 
 const About = () => {
