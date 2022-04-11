@@ -5,12 +5,3 @@
   align-items: center;
   justify-content: center;
 }
-
-/* @media screen and (max-height:768px) {
-  .home {
-    height: auto;
-    padding-top: 1rem;
-    padding-bottom: 1.5rem  ;
-  }
-}
- */

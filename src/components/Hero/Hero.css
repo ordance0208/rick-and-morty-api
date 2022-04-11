@@ -1,5 +1,4 @@
 .hero {
-  height: 100%;
   padding: 1rem 0;
 }
 
@@ -40,6 +39,16 @@
 
   .hero .hero-text {
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-height: 768px) {
+  .hero .hero-heading {
+    font-size: 2.7rem;
+  }
+
+  .hero .hero-text {
+    font-size: 1.7rem;
   }
 }
 
