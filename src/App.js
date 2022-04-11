@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import ApiContext from './contexts/ApiContext';
 import TitleComponent from './components/UtilityComponents/TitleComponent/TitleComponent';
-import Header from './components/Header/Header';
+import Header from './components/MiscellaneusComponents/Header/Header';
 import Home from './pages/Home/Home';
 import Characters from './pages/Characters/Characters'
 import CharacterDetails from './pages/CharacterDetails/CharacterDetails';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import ListPage from '../../components/CardList/CardList';
+import ListPage from '../../components/MiscellaneusComponents/CardList/CardList';
 import CharacterCard from '../../components/Cards/CharacterCard/CharacterCard';
 import Container from '../../components/UtilityComponents/Container/Container';
 import ApiContext from '../../contexts/ApiContext';

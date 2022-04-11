@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import CardContainer from '../../components/UtilityComponents/CardContainer/CardContainer';
-import SearchBox from '../../components/FilterComponents/SearchBox/SearchBox';
-import Filters from '../../components/FilterComponents/Filters/Filters';
-import Paginator from '../../components/Paginator/Paginator';
+import CardContainer from '../../UtilityComponents/CardContainer/CardContainer';
+import SearchBox from '../../FilterComponents/SearchBox/SearchBox';
+import Filters from '../../FilterComponents/Filters/Filters';
+import Paginator from '../Paginator/Paginator';
 import './CardList.css';
 
 const CardList = ({ heading, children, dataInfo, setUrlToFetch, urlToFetch, error, filtersDisabled }) => {

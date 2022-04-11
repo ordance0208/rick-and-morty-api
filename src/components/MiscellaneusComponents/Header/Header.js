@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Container from '../UtilityComponents/Container/Container';
+import Container from '../../UtilityComponents/Container/Container';
 import HamburgerButton from '../HamburgerButton/HamburgerButton';
-import HamburgerMenuOverlay from '../UtilityComponents/HamburgerMenuOverlay/HamburgerMenuOverlay';
+import HamburgerMenuOverlay from '../../UtilityComponents/HamburgerMenuOverlay/HamburgerMenuOverlay';
 import './Header.css';
 
 const Header = () => {
