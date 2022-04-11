@@ -7,8 +7,8 @@ const Paginator = ({pageCount, onPageChange, selectedPageIndex}) => {
   const [marginPages, setMarginPages] = useState(2);
 
   const handleResize = () => {
-    setPageRange(window.innerWidth < 650 ? 1 : 5);
-    setMarginPages(window.innerWidth < 650 ? 1 : 2);
+    setPageRange(window.innerWidth < 768 ? 1 : 5);
+    setMarginPages(window.innerWidth < 768 ? 1 : 2);
   }
   
   // Set the paginator page range and margin pages based on screen size
@@ -35,6 +35,7 @@ const Paginator = ({pageCount, onPageChange, selectedPageIndex}) => {
         previousClassName='paginator-prev-button'
         nextClassName='paginator-next-button'
         activeClassName='paginator-active-page'
+        breakClassName='break-label'
         onPageChange={(e) => onPageChange(e.selected + 1)}
         forcePage={selectedPageIndex - 1}
         />

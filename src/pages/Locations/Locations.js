@@ -4,7 +4,6 @@ import LocationCard from '../../components/Cards/LocationCard/LocationCard';
 import Container from '../../components/UtilityComponents/Container/Container';
 import ApiContext from '../../contexts/ApiContext';
 import { fetchPage } from '../../utils/requests';
-import './Locations.css';
 
 const Locations = () => {
   const [locationsData, setLocationsData] = useState([]);

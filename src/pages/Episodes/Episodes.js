@@ -4,7 +4,6 @@ import EpisodeCard from '../../components/Cards/EpisodeCard/EpisodeCard';
 import Container from '../../components/UtilityComponents/Container/Container';
 import ApiContext from '../../contexts/ApiContext';
 import { fetchPage } from '../../utils/requests';
-import './Episodes.css'
 
 const Episodes = () => {
   const [episodesData, setEpisodesData] = useState([]);

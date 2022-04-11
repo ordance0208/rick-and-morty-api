@@ -4,7 +4,6 @@ import CharacterCard from '../../components/Cards/CharacterCard/CharacterCard';
 import Container from '../../components/UtilityComponents/Container/Container';
 import ApiContext from '../../contexts/ApiContext';
 import { fetchPage } from '../../utils/requests';
-import './Characters.css';
 
 const Characters = () => {
   const [charactersData, setCharactersData] = useState([]);

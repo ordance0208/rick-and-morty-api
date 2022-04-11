@@ -43,7 +43,12 @@
   background-color: rgb(107, 163, 22);
 }
 
-@media screen and (max-width: 650px) {
+.paginator .break-label a{
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
   .paginator .paginator-prev-button,
   .paginator .paginator-next-button {
     display: none;
