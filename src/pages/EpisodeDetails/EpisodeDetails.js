@@ -4,7 +4,6 @@ import EpisodeInfoContainer from '../../components/InformationContainers/Episode
 import ApiContext from '../../contexts/ApiContext';
 import extractIds from '../../utils/extractIds';
 import { fetchSingleSubject, fetchMultipleCharacters } from '../../utils/requests';
-import './EpisodeDetails.css';
 
 const EpisodeDetails = ({ match }) => {
   const [episode, setEpisode] = useState({});

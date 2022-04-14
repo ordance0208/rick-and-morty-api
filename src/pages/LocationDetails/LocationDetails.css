@@ -1,18 +1,3 @@
-.location-details .details-container .location-name {
-  margin-top: .75rem;
-  font-size: 2rem;
-}
-
-.location-details .details-container .location-detail {
-  margin-top: 0.1rem;
-  font-size: 1.2rem;
-}
-
-.location-details .details-container .location-residents {
-  margin: 1rem 0;
-  font-size: 2rem;
-}
-
 .location-details {
   min-height: calc(100vh - var(--header-height));
 }

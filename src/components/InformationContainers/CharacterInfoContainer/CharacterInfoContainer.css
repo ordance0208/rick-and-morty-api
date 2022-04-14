@@ -4,6 +4,7 @@
   flex-direction: column;
   padding: 3rem 1rem;
   text-align: left;
+  width: 400px;
 }
 
 .character-info-container .character-image {
