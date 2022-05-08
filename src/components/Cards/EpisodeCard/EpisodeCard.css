@@ -7,7 +7,6 @@ a.card-link {
   background: #fafafa;
   padding: 0.5rem;
   height: 130px;
-  /* max-width: 320px; */
   display: flex;
   justify-content: left;
   align-items: center;
